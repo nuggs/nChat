@@ -20,7 +20,7 @@ messages = []
 lines = []
 updateTrans = 1001
 currentTrans = 0
-textTrans = 3001
+updateText = 3001
 currentText = 0
 maxLines = 6
 title = None
@@ -113,7 +113,7 @@ def onWindowClick(x, y):
             ac.setVisible(lines[i][x], 1)
 
 def acUpdate(deltaT):
-    global appWindow, inputWindow, currentTrans, updateTrans, currentText, textTrans, lines, maxLines
+    global appWindow, inputWindow, currentTrans, updateTrans, currentText, updateText, lines, maxLines
 
     if currentTrans != 0:
         if currentTrans < updateTrans:
@@ -124,7 +124,7 @@ def acUpdate(deltaT):
             currentTrans = 0
 
     if currentText != 0:
-        if currentText < textTrans:
+        if currentText < updateText:
             currentText += 1
         else:
             for i in range(0, maxLines):
